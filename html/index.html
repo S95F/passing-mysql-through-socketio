@@ -1,0 +1,39 @@
+<!DOCTYPE HYML>
+<html lang="en">
+	
+	
+	<head>
+		<script src="./js/socket.io.js"></script>
+		<meta charset="utf-8">
+		<style>
+			body{
+				margin:0;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+			}
+			.container{
+				height:80vh;
+				width:80vw;
+				background:rgba(220,220,220,.9);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="tests" id="t1">
+				<input type="button" id="t1b" value="Execute T1">
+			</div>
+		
+		</div>
+	</body>
+	<script>
+		  var socket = io();
+		  function t1(){
+			  socket.emit("t1","This is from the client");
+		  }
+		  
+		  document.getElementById("t1").onclick = t1;
+	</script>
+</html>
+
